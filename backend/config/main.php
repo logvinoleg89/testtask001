@@ -8,15 +8,14 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name'=>'Тестовое задание',
     'basePath' => dirname(__DIR__),
+    'homeUrl'=> Yii::getAlias('@backendUrl'),
+    'defaultRoute' => 'user/index',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -26,9 +25,68 @@ return [
                 ],
             ],
         ],
+        'user' => [
+            'class'=>'yii\web\User',
+            'identityClass' => 'common\models\User',
+            'loginUrl'=>['sign-in/login'],
+            'enableAutoLogin' => true,
+            'as afterLogin' => 'common\behaviors\LoginTimestampBehavior'
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'request' => [
+            'baseUrl' => '/backend',
+        ],
+        'urlManager'=>[
+            'class'=>'yii\web\UrlManager',
+            'enablePrettyUrl'=>true,
+            'showScriptName'=>false,
+            'rules'=>[
+                // url rules
+            ]
+        ],
+    ],
+    'as globalAccess'=>[
+        'class'=>'\common\behaviors\GlobalAccessBehavior',
+        'rules'=>[
+            [
+                'controllers'=>['sign-in'],
+                'allow' => true,
+                'roles' => ['?'],
+                'actions'=>['login']
+            ],
+            [
+                'controllers'=>['sign-in'],
+                'allow' => true,
+                'roles' => ['@'],
+                'actions'=>['logout']
+            ],
+            [
+                'controllers'=>['site'],
+                'allow' => true,
+                'roles' => ['?', '@'],
+                'actions'=>['error']
+            ],
+            [
+                'controllers'=>['debug/default'],
+                'allow' => true,
+                'roles' => ['?'],
+            ],
+            [
+                'controllers'=>['user'],
+                'allow' => true,
+                'roles' => ['administrator'],
+            ],
+            [
+                'controllers'=>['user'],
+                'allow' => false,
+            ],
+            [
+                'allow' => true,
+                'roles' => ['manager'],
+            ]
+        ]
     ],
     'params' => $params,
 ];

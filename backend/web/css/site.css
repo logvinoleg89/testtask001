@@ -1,4 +1,25 @@
-html,
+body > .header .logo {
+  font-family: inherit;
+}
+body > .header .navbar .nav > li > a > .badge {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 75%;
+}
+body .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon,
+body .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa,
+body .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion {
+  background: none;
+  color: inherit;
+}
+body .user-panel > .info {
+  padding-left: 10px;
+}
+
+
+
+/*html,
 body {
     height: 100%;
 }
@@ -36,7 +57,7 @@ body {
     font-style: italic;
 }
 
-/* add sorting icons to gridview sort links */
+ add sorting icons to gridview sort links 
 a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
@@ -49,11 +70,11 @@ a.asc:after, a.desc:after {
 }
 
 a.asc:after {
-    content: /*"\e113"*/ "\e151";
+    content: "\e113" "\e151";
 }
 
 a.desc:after {
-    content: /*"\e114"*/ "\e152";
+    content: "\e114" "\e152";
 }
 
 .sort-numerical a.asc:after {
@@ -88,4 +109,4 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
-}
+}*/
