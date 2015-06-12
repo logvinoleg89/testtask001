@@ -125,18 +125,18 @@ class SiteController extends Controller
     }
 
     public function actionSignup()
-{
-    $model = new SignupForm();
-    if ($model->load(Yii::$app->request->post())) {
-        if ($user = $model->signup()) {
-            return $this->goHome();
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                return $this->goHome();
+            }
         }
-    }
 
-    return $this->render('signup', [
-        'model' => $model,
-    ]);
-}
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
+    }
 
     public function actionRequestPasswordReset()
     {
