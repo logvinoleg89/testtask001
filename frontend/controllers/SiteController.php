@@ -70,12 +70,25 @@ class SiteController extends Controller
     {
         $model = new LoginForm();
          if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('index.php?r=users', 302);
+            return $this->redirect('/site/profile');
         } else {
             return $this->render('login', [
                 'model' => $model,
             ]);
         }
+    }
+    
+    /**
+    * @return string|\yii\web\Response
+    */
+    public function actionProfile()
+    {
+        $model = User::findOne(Yii::$app->user->id);
+        
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->refresh();
+        }
+        return $this->render('profile', ['model'=>$model]);
     }
 
     public function actionLogin()
@@ -86,7 +99,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('index.php?r=users',302);
+            return $this->redirect('/site/profile');
         } else {
             return $this->render('login', [
                 'model' => $model,

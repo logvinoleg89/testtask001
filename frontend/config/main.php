@@ -20,7 +20,7 @@ return [
             'enablePrettyUrl'=>true,
             'showScriptName'=>false,
             'rules'=>[
-                // url rules
+                'module/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ]
         ],
         'user' => [

@@ -37,6 +37,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Вход', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = ['label' => 'Профиль', 'url' => ['/site/profile']];
                 $menuItems[] = [
                     'label' => 'Выход (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
