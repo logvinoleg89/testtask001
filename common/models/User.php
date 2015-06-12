@@ -25,7 +25,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
+    
     /**
      * @inheritdoc
      */
@@ -232,7 +232,8 @@ class User extends ActiveRecord implements IdentityInterface
             'username' => 'Логин',
             'new_password' => 'Новый пароль',
             'email' => 'E-mail',
-            'status' => 'Статус'
+            'status' => 'Статус',
+            'role' => 'Роль'
         ];
     }
 

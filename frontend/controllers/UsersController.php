@@ -4,6 +4,8 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\User;
+use common\components\AccessRule;
+use yii\filters\AccessControl;
 use common\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -21,6 +23,20 @@ class UsersController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'ruleConfig' => [
+                    'class' => AccessRule::className(),
+                ],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => [
+                            'Admin'
+                        ],
+                    ],
                 ],
             ],
         ];

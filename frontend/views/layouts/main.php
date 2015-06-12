@@ -33,6 +33,10 @@ AppAsset::register($this);
                 ],
             ]);
           
+            if(Yii::$app->user->identity->role == 'Admin') {
+                $menuItems[] = ['label' => 'Пользователи', 'url' => ['/users']];
+            }
+            
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Вход', 'url' => ['/site/login']];
