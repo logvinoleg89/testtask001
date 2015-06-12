@@ -5,7 +5,6 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
-use yii\helpers\ArrayHelper;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -34,45 +33,26 @@ AppAsset::register($this);
                 ],
             ]);
           
+            if (Yii::$app->user->isGuest) {
+                $menuItems[] = ['label' => 'Вход', 'url' => ['/site/login']];
+            } else {
+                $menuItems[] = [
+                    'label' => 'Выход (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/site/logout'],
+                    'linkOptions' => ['data-method' => 'post']
+                ];
+            }
             echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-right'],
-            'items' => [
-                ['label' => Yii::t('frontend', 'Signup'), 'url' => ['/user/sign-in/signup'], 'visible'=>Yii::$app->user->isGuest],
-                ['label' => Yii::t('frontend', 'Login'), 'url' => ['/user/sign-in/login'], 'visible'=>Yii::$app->user->isGuest],
-                [
-                    'label' => Yii::$app->user->isGuest ? '' : Yii::$app->user->identity->getPublicIdentity(),
-                    'visible'=>!Yii::$app->user->isGuest,
-                    'items'=>[
-                        [
-                            'label' => Yii::t('frontend', 'Settings'),
-                            'url' => ['/user/default/index']
-                        ],
-                        [
-                            'label' => Yii::t('frontend', 'Backend'),
-                            'url' => Yii::getAlias('@backendUrl'),
-                            'visible'=>Yii::$app->user->can('manager')
-                        ],
-                        [
-                            'label' => Yii::t('frontend', 'Logout'),
-                            'url' => ['/user/sign-in/logout'],
-                            'linkOptions' => ['data-method' => 'post']
-                        ]
-                    ]
-                ],
-            ]
-        ]);
-        NavBar::end();
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => $menuItems,
+            ]);
+            NavBar::end();
         ?>
 
         <div class="container">
-            <?php if(Yii::$app->session->hasFlash('alert')):?>
-                <?php echo \yii\bootstrap\Alert::widget([
-                    'body'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
-                    'options'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
-                ])?>
-            <?php endif; ?>
 
-            <?= $content ?>
+
+        <?= $content ?>
         </div>
     </div>
 

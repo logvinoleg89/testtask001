@@ -1,3 +1,0 @@
-composer install
-php yii migrate
-php yii rbac/init

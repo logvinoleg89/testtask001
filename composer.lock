@@ -1,246 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f70ad8a461c4fc4da1ac6c2f39cc0f2a",
+    "hash": "1b76f255130cd7f5b04162c641a7418b",
     "packages": [
-        {
-            "name": "bower-asset/admin-lte",
-            "version": "v2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "406de4e708e84ed0abbc08b09870828254a6b2ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/406de4e708e84ed0abbc08b09870828254a6b2ef",
-                "reference": "406de4e708e84ed0abbc08b09870828254a6b2ef",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "index2.html",
-                    "dist/css/AdminLTE.css",
-                    "dist/js/app.js",
-                    "build/less/AdminLTE.less"
-                ],
-                "bower-asset-ignore": [
-                    "/.*",
-                    "node_modules",
-                    "bower_components",
-                    "composer.json",
-                    "documentation"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Admin dashboard and control panel template",
-            "keywords": [
-                "admin",
-                "backend",
-                "bootstrap",
-                "css",
-                "html",
-                "js",
-                "responsive",
-                "template",
-                "theme"
-            ]
-        },
-        {
-            "name": "bower-asset/blueimp-canvas-to-blob",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/JavaScript-Canvas-to-Blob.git",
-                "reference": "88b88aa06fe7fa5a49f8205ed7402a684db7b8a4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Canvas-to-Blob/zipball/88b88aa06fe7fa5a49f8205ed7402a684db7b8a4",
-                "reference": "88b88aa06fe7fa5a49f8205ed7402a684db7b8a4",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "js/canvas-to-blob.js",
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "test"
-                ]
-            },
-            "description": "JavaScript Canvas to Blob is a function to convert canvas elements into Blob objects.",
-            "keywords": [
-                "blob",
-                "canvas",
-                "conversion",
-                "convert",
-                "javascript"
-            ]
-        },
-        {
-            "name": "bower-asset/blueimp-file-upload",
-            "version": "9.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/jQuery-File-Upload.git",
-                "reference": "c1392e08b47e3d658a8cfdda6d490bf4c71a9da8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/c1392e08b47e3d658a8cfdda6d490bf4c71a9da8",
-                "reference": "c1392e08b47e3d658a8cfdda6d490bf4c71a9da8",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/blueimp-canvas-to-blob": ">=2.1.0",
-                "bower-asset/blueimp-load-image": ">=1.11.0",
-                "bower-asset/blueimp-tmpl": ">=2.5.3",
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "css/jquery.fileupload.css",
-                    "css/jquery.fileupload-ui.css",
-                    "css/jquery.fileupload-noscript.css",
-                    "css/jquery.fileupload-ui-noscript.css",
-                    "js/cors/jquery.postmessage-transport.js",
-                    "js/cors/jquery.xdr-transport.js",
-                    "js/vendor/jquery.ui.widget.js",
-                    "js/jquery.fileupload.js",
-                    "js/jquery.fileupload-process.js",
-                    "js/jquery.fileupload-validate.js",
-                    "js/jquery.fileupload-image.js",
-                    "js/jquery.fileupload-audio.js",
-                    "js/jquery.fileupload-video.js",
-                    "js/jquery.fileupload-ui.js",
-                    "js/jquery.fileupload-jquery-ui.js",
-                    "js/jquery.fileupload-angular.js",
-                    "js/jquery.iframe-transport.js"
-                ],
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "/cors",
-                    "css/demo-ie8.css",
-                    "css/demo.css",
-                    "css/style.css",
-                    "js/app.js",
-                    "js/main.js",
-                    "server",
-                    "test"
-                ]
-            },
-            "description": "File Upload widget with multiple file selection, drag&amp;drop support, progress bar, validation and preview images, audio and video for jQuery. Supports cross-domain, chunked and resumable file uploads. Works with any server-side platform (Google App Engine, PHP, Python, Ruby on Rails, Java, etc.) that supports standard HTML form file uploads.",
-            "keywords": [
-                "bootstrap",
-                "chunk",
-                "cross-domain",
-                "cross-site",
-                "drag",
-                "drop",
-                "file",
-                "gae",
-                "go",
-                "jquery",
-                "multiple",
-                "php",
-                "preview",
-                "progress",
-                "python",
-                "resume",
-                "selection",
-                "upload",
-                "widget"
-            ]
-        },
-        {
-            "name": "bower-asset/blueimp-load-image",
-            "version": "1.13.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/JavaScript-Load-Image.git",
-                "reference": "3ddac4fd7e69fa2651bc37658e4fe6c826af5157"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Load-Image/zipball/3ddac4fd7e69fa2651bc37658e4fe6c826af5157",
-                "reference": "3ddac4fd7e69fa2651bc37658e4fe6c826af5157",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "js/load-image.js",
-                    "js/load-image-ios.js",
-                    "js/load-image-orientation.js",
-                    "js/load-image-meta.js",
-                    "js/load-image-exif.js",
-                    "js/load-image-exif-map.js"
-                ],
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "css",
-                    "js/vendor",
-                    "js/demo.js",
-                    "test"
-                ]
-            },
-            "description": "JavaScript Load Image is a library to load images provided as File or Blob objects or via URL. It returns an optionally scaled and/or cropped HTML img or canvas element. It also provides a method to parse image meta data to extract Exif tags and thumbnails and to restore the complete image header after resizing.",
-            "keywords": [
-                "blob",
-                "canvas",
-                "crop",
-                "exif",
-                "file",
-                "image",
-                "img",
-                "javascript",
-                "load",
-                "loading",
-                "meta",
-                "resizing",
-                "scale",
-                "thumbnail",
-                "url"
-            ]
-        },
-        {
-            "name": "bower-asset/blueimp-tmpl",
-            "version": "2.5.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/JavaScript-Templates.git",
-                "reference": "b75e882ec0e353ce2d8bfdb2ea755060d2012368"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Templates/zipball/b75e882ec0e353ce2d8bfdb2ea755060d2012368",
-                "reference": "b75e882ec0e353ce2d8bfdb2ea755060d2012368",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "js/tmpl.js",
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "css",
-                    "js/demo.js",
-                    "test"
-                ]
-            },
-            "description": "< 1KB lightweight, fast & powerful JavaScript templating engine with zero dependencies. Compatible with server-side environments like node.js, module loaders like RequireJS and all web browsers.",
-            "keywords": [
-                "javascript",
-                "templates",
-                "templating"
-            ]
-        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.4",
@@ -294,72 +59,6 @@
             ]
         },
         {
-            "name": "bower-asset/font-awesome",
-            "version": "v4.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
-                "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "./css/font-awesome.css",
-                    "./fonts/*"
-                ],
-                "bower-asset-ignore": [
-                    "*/.*",
-                    "*.json",
-                    "src",
-                    "*.yml",
-                    "Gemfile",
-                    "Gemfile.lock",
-                    "*.md"
-                ]
-            },
-            "license": [
-                "OFL-1.1",
-                "MIT",
-                "CC-BY-3.0"
-            ],
-            "description": "Font Awesome"
-        },
-        {
-            "name": "bower-asset/html5shiv",
-            "version": "3.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aFarkas/html5shiv.git",
-                "reference": "40df868a76f1f19ea23b123d1480d44a7195f349"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aFarkas/html5shiv/zipball/40df868a76f1f19ea23b123d1480d44a7195f349",
-                "reference": "40df868a76f1f19ea23b123d1480d44a7195f349",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "dist/html5shiv.js"
-                ],
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "composer.json",
-                    "test",
-                    "build",
-                    "src",
-                    "build.xml"
-                ]
-            }
-        },
-        {
             "name": "bower-asset/jquery",
             "version": "2.1.4",
             "source": {
@@ -402,63 +101,6 @@
                 "jquery",
                 "library"
             ]
-        },
-        {
-            "name": "bower-asset/jquery-slimscroll",
-            "version": "v1.3.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rochal/jQuery-slimScroll.git",
-                "reference": "7d25f8901951185e65b5a7cd8a65e5c3c28338c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rochal/jQuery-slimScroll/zipball/7d25f8901951185e65b5a7cd8a65e5c3c28338c0",
-                "reference": "7d25f8901951185e65b5a7cd8a65e5c3c28338c0",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "./jquery.slimscroll.min.js"
-            },
-            "description": "slimScroll is a small jQuery plugin that transforms any div into a scrollable area. slimScroll doesn't occupy any visual space as it only appears on a user initiated mouse-over.",
-            "keywords": [
-                "scroll",
-                "scrollable",
-                "scrollbar",
-                "scroller",
-                "scrolling",
-                "slimscroll",
-                "ui"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-ui",
-            "version": "1.11.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jqueryui.git",
-                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
-                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "jquery-ui.js"
-                ],
-                "bower-asset-ignore": []
-            }
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -678,269 +320,24 @@
             "time": "2013-11-30 08:25:19"
         },
         {
-            "name": "intervention/image",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Intervention/image.git",
-                "reference": "936887fad50cab909935b4fcf37c00ef5e8abe9d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/936887fad50cab909935b4fcf37c00ef5e8abe9d",
-                "reference": "936887fad50cab909935b4fcf37c00ef5e8abe9d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-fileinfo": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.2",
-                "phpunit/phpunit": "3.*"
-            },
-            "suggest": {
-                "ext-gd": "to use GD library based image processing.",
-                "ext-imagick": "to use Imagick based image processing.",
-                "intervention/imagecache": "Caching extension for the Intervention Image library"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Intervention\\Image\\": "src/Intervention/Image"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oliver Vogel",
-                    "email": "oliver@olivervogel.net",
-                    "homepage": "http://olivervogel.net/"
-                }
-            ],
-            "description": "Image handling and manipulation library with support for Laravel integration",
-            "homepage": "http://image.intervention.io/",
-            "keywords": [
-                "gd",
-                "image",
-                "imagick",
-                "laravel",
-                "thumbnail",
-                "watermark"
-            ],
-            "time": "2015-01-28 17:50:05"
-        },
-        {
-            "name": "league/flysystem",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "56862959b45131ad33e5a7727a25db19f2cf090b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/56862959b45131ad33e5a7727a25db19f2cf090b",
-                "reference": "56862959b45131ad33e5a7727a25db19f2cf090b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "ext-fileinfo": "*",
-                "league/phpunit-coverage-listener": "~1.1",
-                "mockery/mockery": "~0.9",
-                "phpspec/phpspec": "~2.0",
-                "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.1",
-                "predis/predis": "~1.0",
-                "tedivm/stash": "~0.12.0"
-            },
-            "suggest": {
-                "ext-fileinfo": "Required for MimeType",
-                "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
-                "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
-                "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
-                "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-                "league/flysystem-copy": "Allows you to use Copy.com storage",
-                "league/flysystem-dropbox": "Allows you to use Dropbox storage",
-                "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
-                "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-                "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
-                "league/flysystem-webdav": "Allows you to use WebDAV storage",
-                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
-                "predis/predis": "Allows you to use Predis for caching"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Flysystem\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Frank de Jonge",
-                    "email": "info@frenky.net"
-                }
-            ],
-            "description": "Many filesystems, one API.",
-            "keywords": [
-                "Cloud Files",
-                "WebDAV",
-                "aws",
-                "cloud",
-                "copy.com",
-                "dropbox",
-                "file systems",
-                "files",
-                "filesystem",
-                "ftp",
-                "rackspace",
-                "remote",
-                "s3",
-                "sftp",
-                "storage"
-            ],
-            "time": "2015-06-07 21:27:37"
-        },
-        {
-            "name": "league/tactician",
-            "version": "v0.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/tactician.git",
-                "reference": "fd8cfd4ab84723bcd0cf10493654eeec0d3ca4ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/tactician/zipball/fd8cfd4ab84723bcd0cf10493654eeec0d3ca4ba",
-                "reference": "fd8cfd4ab84723bcd0cf10493654eeec0d3ca4ba",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.3",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Tactician\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ross Tuck",
-                    "homepage": "http://tactician.thephpleague.com"
-                }
-            ],
-            "description": "A small, flexible command bus. Handy for building service layers.",
-            "keywords": [
-                "command",
-                "command bus",
-                "service layer"
-            ],
-            "time": "2015-05-08 12:58:09"
-        },
-        {
-            "name": "league/url",
-            "version": "3.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/url.git",
-                "reference": "73fe5a6eb3d0f399535572cb9897fbdec0803c39"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/url/zipball/73fe5a6eb3d0f399535572cb9897fbdec0803c39",
-                "reference": "73fe5a6eb3d0f399535572cb9897fbdec0803c39",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3.0",
-                "true/punycode": "~1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Url\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ignace Nyamagana Butera",
-                    "email": "nyamsprod@gmail.com",
-                    "homepage": "https://github.com/nyamsprod/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "League/url is a lightweight PHP Url manipulating library",
-            "homepage": "http://url.thephpleague.com",
-            "keywords": [
-                "parse_url",
-                "php",
-                "url"
-            ],
-            "time": "2015-05-13 07:51:53"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.1",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
+                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/31454f258f10329ae7c48763eb898a75c39e0a9f",
+                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1,<0.9.4"
+                "mockery/mockery": "~0.9.1"
             },
             "type": "library",
             "extra": {
@@ -969,181 +366,10 @@
             "description": "Swiftmailer, free feature-rich PHP mailer",
             "homepage": "http://swiftmailer.org",
             "keywords": [
-                "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2015-06-06 14:19:39"
-        },
-        {
-            "name": "trntv/cheatsheet",
-            "version": "0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/trntv/cheatsheet.git",
-                "reference": "f74e52e1cac62206ec9675ca96b8bc13c36be73d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/trntv/cheatsheet/zipball/f74e52e1cac62206ec9675ca96b8bc13c36be73d",
-                "reference": "f74e52e1cac62206ec9675ca96b8bc13c36be73d",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "cheatsheet\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eugene Terentev",
-                    "email": "eugene@terentev.net"
-                }
-            ],
-            "description": "Cheat sheet of knowledge you may use in your code",
-            "time": "2015-02-03 00:33:00"
-        },
-        {
-            "name": "trntv/yii2-file-kit",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/trntv/yii2-file-kit.git",
-                "reference": "d80d274223e89649099df740e8545ecb97e52ca3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/trntv/yii2-file-kit/zipball/d80d274223e89649099df740e8545ecb97e52ca3",
-                "reference": "d80d274223e89649099df740e8545ecb97e52ca3",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/blueimp-file-upload": "~9.7.0",
-                "league/flysystem": "~1.0",
-                "league/url": "~3.0",
-                "yiisoft/yii2": "~2.0.0",
-                "yiisoft/yii2-jui": "~2.0.0"
-            },
-            "suggest": {
-                "creocoder/yii2-flysystem": "~0.8.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "trntv\\filekit\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Eugene Terentev",
-                    "email": "eugene@terentev.net"
-                }
-            ],
-            "description": "Yii2 file upload and storage kit",
-            "time": "2015-03-24 19:32:39"
-        },
-        {
-            "name": "trntv/yii2-tactician",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/trntv/yii2-tactician.git",
-                "reference": "43f3ef1c8f816c0fece8f34fa039a10cded6b8ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/trntv/yii2-tactician/zipball/43f3ef1c8f816c0fece8f34fa039a10cded6b8ca",
-                "reference": "43f3ef1c8f816c0fece8f34fa039a10cded6b8ca",
-                "shasum": ""
-            },
-            "require": {
-                "league/tactician": "^0.6.0",
-                "yiisoft/yii2": "^2.0.0"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "trntv\\tactician\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Eugene Terentev",
-                    "email": "eugene@terentev.net"
-                }
-            ],
-            "description": "A simple, flexible command bus. This package provide it's integration with Yii2",
-            "keywords": [
-                "extension",
-                "yii2"
-            ],
-            "time": "2015-06-02 19:42:07"
-        },
-        {
-            "name": "true/punycode",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/true/php-punycode.git",
-                "reference": "21c0025130b4e2b2d0b7dbe5f86e9e1512507656"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/true/php-punycode/zipball/21c0025130b4e2b2d0b7dbe5f86e9e1512507656",
-                "reference": "21c0025130b4e2b2d0b7dbe5f86e9e1512507656",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.x",
-                "satooshi/php-coveralls": "dev-master",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "True\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Renan Gonçalves",
-                    "email": "renan.saddam@gmail.com"
-                }
-            ],
-            "description": "A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA)",
-            "homepage": "https://github.com/true/php-punycode",
-            "keywords": [
-                "idna",
-                "punycode"
-            ],
-            "time": "2015-03-12 16:49:35"
+            "time": "2015-03-14 06:06:39"
         },
         {
             "name": "yiisoft/yii2",
@@ -1232,54 +458,6 @@
                 "yii2"
             ],
             "time": "2015-05-10 20:09:47"
-        },
-        {
-            "name": "yiisoft/yii2-authclient",
-            "version": "2.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-authclient.git",
-                "reference": "cbe801a7d8bb477be15cb0fbdaa75ca5bdfeb91b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/cbe801a7d8bb477be15cb0fbdaa75ca5bdfeb91b",
-                "reference": "cbe801a7d8bb477be15cb0fbdaa75ca5bdfeb91b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "yiisoft/yii2": ">=2.0.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\authclient\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Paul Klimov",
-                    "email": "klimov.paul@gmail.com"
-                }
-            ],
-            "description": "External authentication via OAuth and OpenID for the Yii framework",
-            "keywords": [
-                "OpenId",
-                "auth",
-                "oauth",
-                "yii2"
-            ],
-            "time": "2015-05-10 22:07:56"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -1379,56 +557,6 @@
             "time": "2015-03-01 06:22:44"
         },
         {
-            "name": "yiisoft/yii2-jui",
-            "version": "2.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-jui.git",
-                "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce16f29cca654702c2ee500ccad9657a2d2e6a09",
-                "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery-ui": "1.11.*@stable",
-                "yiisoft/yii2": ">=2.0.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                },
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\jui\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
-                }
-            ],
-            "description": "The Jquery UI extension for the Yii framework",
-            "keywords": [
-                "jQuery UI",
-                "yii2"
-            ],
-            "time": "2015-05-10 22:09:43"
-        },
-        {
             "name": "yiisoft/yii2-swiftmailer",
             "version": "2.0.4",
             "source": {
@@ -1481,22 +609,6 @@
     ],
     "packages-dev": [
         {
-            "name": "bower-asset/flot",
-            "version": "v0.8.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flot/flot.git",
-                "reference": "453b017cc5acfd75e252b93e8635f57f4196d45d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/flot/flot/zipball/453b017cc5acfd75e252b93e8635f57f4196d45d",
-                "reference": "453b017cc5acfd75e252b93e8635f57f4196d45d",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
-        {
             "name": "bower-asset/typeahead.js",
             "version": "v0.10.5",
             "source": {
@@ -1525,16 +637,16 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "v1.5.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d"
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
-                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/010c7efedd88bf31141a02719f51fb44c732d5a0",
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0",
                 "shasum": ""
             },
             "require": {
@@ -1544,18 +656,14 @@
                 "phpunit/phpunit": "~4.0",
                 "squizlabs/php_codesniffer": "~1.5"
             },
-            "suggest": {
-                "ext-intl": "*"
-            },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
+                "branch-alias": []
             },
             "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
+                "psr-0": {
+                    "Faker": "src/",
+                    "Faker\\PHPUnit": "test/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1573,7 +681,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-05-29 06:29:14"
+            "time": "2014-06-04 14:43:02"
         },
         {
             "name": "phpspec/php-diff",
