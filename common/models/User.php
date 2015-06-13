@@ -67,9 +67,6 @@ class User extends ActiveRecord implements IdentityInterface
                 'oauth_create'=>[
                     'oauth_client', 'oauth_client_user_id', 'email', '!status'
                 ],
-                'default'=>[
-                    'username'
-                ]
             ]
         );
     }
@@ -104,7 +101,8 @@ class User extends ActiveRecord implements IdentityInterface
             ['username', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => 'Имя пользователя может содержать только буквы латинского алфавита и цифры'],
             ['username', 'required', 'message' => 'Введите имя пользователя'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Пользователь с таким именем уже зарегистрирован'],
-            ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => 'Имя пользователя должно быть не менее 2 символов', 'tooLong' => 'Имя пользователя должно быть не более 255 символов'],
+            ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => 'Имя пользователя должно быть не менее 2 символов',
+                'tooLong' => 'Имя пользователя должно быть не более 255 символов'],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required', 'message' => 'Введите e-mail'],
