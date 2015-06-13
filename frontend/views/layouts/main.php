@@ -5,6 +5,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
+use yii\helpers\ArrayHelper;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -39,9 +40,9 @@ AppAsset::register($this);
             
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Вход', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => 'Вход', 'url' => ['/']];
             } else {
-                $menuItems[] = ['label' => 'Профиль', 'url' => ['/site/profile']];
+                $menuItems[] = ['label' => 'Профиль', 'url' => ['/users/profile']];
                 $menuItems[] = [
                     'label' => 'Выход (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
@@ -57,6 +58,12 @@ AppAsset::register($this);
 
         <div class="container">
 
+        <?php if(Yii::$app->session->hasFlash('alert')):?>
+            <?php echo \yii\bootstrap\Alert::widget([
+                'body'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
+                'options'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
+            ])?>
+        <?php endif; ?>   
 
         <?= $content ?>
         </div>

@@ -10,12 +10,24 @@ use common\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * UsersController implements the CRUD actions for User model.
  */
 class UsersController extends Controller
 {
+    public function actions()
+    {
+        return [
+            'oauth' => [
+                'class' => 'yii\authclient\AuthAction',
+                'successCallback' => [$this, 'successOAuthCallback'],
+                'successUrl' => '/users/profile'
+            ]
+        ];
+    }
+    
     public function behaviors()
     {
         return [
@@ -35,6 +47,17 @@ class UsersController extends Controller
                         'allow' => true,
                         'roles' => [
                             'Admin'
+                        ],
+                    ],
+                    [
+                        'actions' => ['oauth'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['profile'],
+                        'allow' => true,
+                        'roles' => [
+                            '@'
                         ],
                     ],
                 ],
@@ -109,6 +132,28 @@ class UsersController extends Controller
             ]);
         }
     }
+    
+    /**
+    * @return string|\yii\web\Response
+    */
+    public function actionProfile()
+    {
+        $model = User::findOne(Yii::$app->user->id);
+        
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->getSession()->setFlash(
+                'alert', [
+                    'options' => ['class' => 'alert-success'],
+                    'body' => 'Редактирование прошло успешно!'
+                ]
+            );
+            return $this->refresh();
+        }
+        
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
 
     /**
      * Deletes an existing User model.
@@ -136,6 +181,68 @@ class UsersController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('Ничего не найдено');
+        }
+    }
+    
+    /**
+     * @param $client \yii\authclient\BaseClient
+     * @return bool
+     * @throws Exception
+     */
+    public function successOAuthCallback($client)
+    {
+        $attributes = $client->getUserAttributes();
+       
+        $user = User::find()->where([
+                'oauth_client'=>$client->getName(),
+                'oauth_client_user_id'=>ArrayHelper::getValue($attributes, 'id')
+            ])
+            ->one();
+        
+        if (!$user) {
+            $user = new User();
+            $user->scenario = 'oauth_create';
+            $user->email = ArrayHelper::getValue($attributes, 'email');
+            $user->username = ArrayHelper::getValue($attributes, 'login', $user->email);
+            $user->oauth_client = $client->getName();
+            $user->oauth_client_user_id = ArrayHelper::getValue($attributes, 'id');
+            $password = Yii::$app->security->generateRandomString(8);
+            
+            
+            $user->setPassword($password);
+             
+            if ($user->save()) {
+                Yii::$app->getSession()->setFlash(
+                    'alert',
+                    [
+                        'options'=>['class'=>'alert-success'],
+                        'body'=> 'Добро пожаловать'
+                    ]
+                );
+            } else {
+                if (User::find()->where(['email'=>$user->email])->count()) {
+                    Yii::$app->getSession()->setFlash(
+                        'alert',
+                        [
+                            'options'=>['class'=>'alert-danger'],
+                            'body'=>'У нас уже есть пользователь с электронной почтой ' . $user->email
+                        ]
+                    );
+                } else {
+                    Yii::$app->getSession()->setFlash(
+                        'alert',
+                        [
+                            'options'=>['class'=>'alert-danger'],
+                            'body'=>'Ошибка при OAuth авторизации'
+                        ]
+                    );
+                }
+            };
+        }
+        if (Yii::$app->user->login($user, 3600 * 24 * 30)) {
+            return true;
+        } else {
+            throw new Exception('OAuth error');
         }
     }
 }

@@ -12,6 +12,20 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'facebook' => [
+                    'class' => 'yii\authclient\clients\Facebook',
+                    'clientId' => '1611086835838907',
+                    'clientSecret' => '05a9e34c1526e386d469dd708586aaff',
+                    'viewOptions' => [
+                        'popupWidth' => '1000',
+                        'popupHeight' => '500'
+                    ]
+                ],
+            ]
+        ],
         'request' => [
             'baseUrl' => '',
         ],

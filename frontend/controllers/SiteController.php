@@ -69,8 +69,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = new LoginForm();
-         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('/site/profile');
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->redirect('/users/profile');
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -78,19 +78,6 @@ class SiteController extends Controller
         }
     }
     
-    /**
-    * @return string|\yii\web\Response
-    */
-    public function actionProfile()
-    {
-        $model = User::findOne(Yii::$app->user->id);
-        
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->refresh();
-        }
-        return $this->render('profile', ['model'=>$model]);
-    }
-
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
@@ -99,7 +86,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('/site/profile');
+            return $this->redirect('/users/profile');
         } else {
             return $this->render('login', [
                 'model' => $model,
