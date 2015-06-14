@@ -108,7 +108,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['email', 'required', 'message' => 'Введите e-mail'],
             ['email', 'email', 'message' => 'Введите корректный e-mail адрес'],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный адрес электронной почты уже используется'],
-
+                    
 
         ];
     }

@@ -14,7 +14,7 @@ class LoginForm extends Model
     public $rememberMe = true;
 
     private $_user = false;
-
+    
 
     /**
      * @inheritdoc
@@ -28,9 +28,12 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            
+            ['username', 'roleValidator', 'params' => ['role' => User::ROLE_USER], on => 'default'],
+            ['username', 'roleValidator', 'params' => ['role' => User::ROLE_ADMIN], on => 'adminLogin'],
         ];
     }
-
+    
     public function attributeLabels()
     {
         return [
@@ -54,6 +57,15 @@ class LoginForm extends Model
             if (!$user || !$user->validatePassword($this->password)) {
                 $this->addError($attribute, 'Неправильное имя пользователя или пароль.');
             }
+        }
+    }
+    
+    public function roleValidator($attribute, $params)
+    {
+        $user = User::findByUsername($this->username);
+        
+        if (!$user || $user->role != $params['role']) {
+            $this->addError($attribute, 'Такого аккаунта не существует');
         }
     }
 
