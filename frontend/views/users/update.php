@@ -13,10 +13,7 @@ $this->params['breadcrumbs'][] = Yii::t('frontend', 'Edit');
 <div class="user-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <? $status[$model::STATUS_DELETED] = 'Заблокирован';
-    $status[$model::STATUS_ACTIVE] = 'Активен';?>
-    <?=
-    $this->render('_form', [
+    <?= $this->render('_form', [
         'model' => $model
     ]) ?>
 
