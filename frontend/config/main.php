@@ -26,14 +26,6 @@ return [
                 ],
             ]
         ],
-        'request' => [
-            'baseUrl' => '',
-        ],
-        'urlManager'=>[
-            'class'=>'yii\web\UrlManager',
-            'enablePrettyUrl'=>true,
-            'showScriptName'=>false,
-        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
