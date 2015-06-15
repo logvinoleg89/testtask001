@@ -15,46 +15,18 @@ class m130524_201442_init extends Migration
 
         $this->createTable('{{%user}}', [
             'id' => Schema::TYPE_PK,
-            'username' => Schema::TYPE_STRING,
+            'username' => Schema::TYPE_STRING . ' NOT NULL',
             'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
             'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
             'password_reset_token' => Schema::TYPE_STRING,
             'email' => Schema::TYPE_STRING . ' NOT NULL',
-            
-            'oauth_client' => Schema::TYPE_STRING,
-            'oauth_client_user_id' => Schema::TYPE_STRING,
-            'role' => Schema::TYPE_STRING . ' NOT NULL DEFAULT "User"',
 
             'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
-        
-        $this->insert('{{%user}}', [
-            'id'=>1,
-            'username'=>'admin',
-            'email'=>'admin@example.com',
-            'password_hash'=>Yii::$app->getSecurity()->generatePasswordHash('admin'),
-            'auth_key'=>Yii::$app->getSecurity()->generateRandomString(),
-            'role'=>\common\models\User::ROLE_ADMIN,
-            'status'=>\common\models\User::STATUS_ACTIVE,
-            'created_at'=>time(),
-            'updated_at'=>time()
-        ]);
-        
-        $this->insert('{{%user}}', [
-            'id'=>2,
-            'username'=>'user',
-            'email'=>'user@example.com',
-            'password_hash'=>Yii::$app->getSecurity()->generatePasswordHash('user'),
-            'auth_key'=>Yii::$app->getSecurity()->generateRandomString(),
-            'role'=>\common\models\User::ROLE_USER,
-            'status'=>\common\models\User::STATUS_ACTIVE,
-            'created_at'=>time(),
-            'updated_at'=>time()
-        ]);
     }
-    
+
     public function down()
     {
         $this->dropTable('{{%user}}');
