@@ -6,6 +6,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
 use yii\helpers\ArrayHelper;
+use common\models\User;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -34,7 +35,7 @@ AppAsset::register($this);
                 ],
             ]);
           
-            if(Yii::$app->user->identity->role == 'Admin') {
+            if(Yii::$app->user->identity->role == User::ROLE_ADMIN) {
                 $menuItems[] = ['label' => 'Пользователи', 'url' => ['/users']];
             }
             

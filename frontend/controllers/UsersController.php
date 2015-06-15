@@ -46,7 +46,7 @@ class UsersController extends Controller
                     [
                         'allow' => true,
                         'roles' => [
-                            'Admin'
+                            User::ROLE_ADMIN
                         ],
                     ],
                     [
