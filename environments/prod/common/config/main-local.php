@@ -1,5 +1,6 @@
 <?php
 return [
+    'language'=>'ru-RU',
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
@@ -11,6 +12,14 @@ return [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
+        ],
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+            ],
         ],
     ],
 ];

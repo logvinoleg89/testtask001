@@ -30,27 +30,27 @@ class SignupForm extends Model
                 );
             }],
 
-
+                    
             ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => 'Имя пользователя может содержать только буквы латинского алфавита и цифры'],
-            ['username', 'required', 'message' => 'Введите имя пользователя'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Пользователь с таким именем уже зарегистрирован'],
-            ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => 'Имя пользователя должно быть не менее 2 символов',
-                'tooLong' => 'Имя пользователя должно быть не более 255 символов'],
+            ['username', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => Yii::t('frontend', 'The password can contain only letters and numbers')],
+            ['username', 'required', 'message' => Yii::t('frontend', 'Enter your user name')],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('frontend', 'This user name is already registered')],
+            ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => Yii::t('frontend', 'Username must be at least 2 characters'),
+                'tooLong' => Yii::t('frontend', 'The user name must be no more than 255 characters')],
 
             ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required', 'message' => 'Введите e-mail'],
-            ['email', 'email', 'message' => 'Введите корректный e-mail адрес'],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный адрес электронной почты уже используется'],
+            ['email', 'required', 'message' => Yii::t('frontend', 'Enter your e-mail')],
+            ['email', 'email', 'message' => Yii::t('frontend', 'Please enter a valid e-mail address')],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('frontend', 'This e-mail address is already in use')],
 
-            ['password', 'required', 'message' => 'Введите пароль'],
+            ['password', 'required', 'message' => Yii::t('frontend', 'Enter password')],
 
-            ['password', 'string', 'length' => [6, 25], 'tooShort' => 'Пароль должен быть не менее 6 символов',
-                'tooLong' => 'Пароль должен быть не более 25 символов'],
-            ['password', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => 'Пароль может содержать только буквы латинского алфавита и цифры'],
+            ['password', 'string', 'length' => [6, 25], 'tooShort' => Yii::t('frontend', 'The password must be at least 6 characters'),
+                'tooLong' => Yii::t('frontend', 'The password should be no more than 25 characters')],
+            ['password', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => Yii::t('frontend', 'The password can contain only letters and numbers')],
 
-            ['confirm_password', 'required', 'message' => 'Повторно введите Ваш пароль'],
-            ['confirm_password', 'compare', 'compareAttribute' => 'password', 'message' => 'Пароли не совпадают'],
+            ['confirm_password', 'required', 'message' => Yii::t('frontend', 'Re-enter your password')],
+            ['confirm_password', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('frontend', 'Passwords do not match')],
 
         ];
     }
@@ -58,9 +58,9 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => 'Логин',
-            'password' => 'Пароль',
-            'confirm_password' => 'Подтверждение пароля'
+            'username' => Yii::t('frontend', 'Login'),
+            'password' => Yii::t('frontend', 'Password'),
+            'confirm_password' => Yii::t('frontend', 'Confirm password'),
         ];
     }
 

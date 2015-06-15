@@ -124,7 +124,7 @@ class UsersController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            \Yii::$app->getSession()->setFlash('succeeded', 'Редактирование прошло успешно!');
+            \Yii::$app->getSession()->setFlash('succeeded', Yii::t('frontend', 'Edit successful!'));
             return $this->redirect(['index', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -144,7 +144,7 @@ class UsersController extends Controller
             Yii::$app->getSession()->setFlash(
                 'alert', [
                     'options' => ['class' => 'alert-success'],
-                    'body' => 'Редактирование прошло успешно!'
+                    'body' => Yii::t('frontend', 'Edit successful!')
                 ]
             );
             return $this->refresh();
@@ -180,7 +180,7 @@ class UsersController extends Controller
         if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('Ничего не найдено');
+            throw new NotFoundHttpException(Yii::t('frontend', 'Nothing Found'));
         }
     }
     
@@ -215,8 +215,8 @@ class UsersController extends Controller
                 Yii::$app->getSession()->setFlash(
                     'alert',
                     [
-                        'options'=>['class'=>'alert-success'],
-                        'body'=> 'Добро пожаловать'
+                        'options' => ['class'=>'alert-success'],
+                        'body' => Yii::t('frontend', 'Welcome')
                     ]
                 );
             } else {
@@ -224,16 +224,16 @@ class UsersController extends Controller
                     Yii::$app->getSession()->setFlash(
                         'alert',
                         [
-                            'options'=>['class'=>'alert-danger'],
-                            'body'=>'У нас уже есть пользователь с электронной почтой ' . $user->email
+                            'options' => ['class'=>'alert-danger'],
+                            'body' => Yii::t('frontend', 'We already have a user with this e-mail') . $user->email
                         ]
                     );
                 } else {
                     Yii::$app->getSession()->setFlash(
                         'alert',
                         [
-                            'options'=>['class'=>'alert-danger'],
-                            'body'=>'Ошибка при OAuth авторизации'
+                            'options' => ['class'=>'alert-danger'],
+                            'body' => Yii::t('frontend', 'Error OAuth authorization')
                         ]
                     );
                 }
@@ -242,7 +242,7 @@ class UsersController extends Controller
         if (Yii::$app->user->login($user, 3600 * 24 * 30)) {
             return true;
         } else {
-            throw new Exception('OAuth error');
+            throw new Exception(Yii::t('frontend', 'OAuth error'));
         }
     }
 }

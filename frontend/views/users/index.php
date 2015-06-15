@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\search\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Пользователи';
+$this->title = Yii::t('frontend', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'status',
                 'value' => function ($model) {
-                        return $model->status == 10 ? 'Активен' : 'Заблокирован';
+                        return $model->status == 10 ? Yii::t('frontend', 'Active') : Yii::t('frontend', 'Locked');
                     },
             ],
             ['class' => 'yii\grid\ActionColumn',

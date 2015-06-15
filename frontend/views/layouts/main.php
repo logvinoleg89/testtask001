@@ -28,7 +28,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Тестовое задание',
+                'brandLabel' => Yii::t('frontend', 'The test application'),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,16 +36,16 @@ AppAsset::register($this);
             ]);
           
             if(Yii::$app->user->identity->role == User::ROLE_ADMIN) {
-                $menuItems[] = ['label' => 'Пользователи', 'url' => ['/users']];
+                $menuItems[] = ['label' => Yii::t('frontend', 'Users'), 'url' => ['/users']];
             }
             
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Вход', 'url' => ['/']];
+                $menuItems[] = ['label' =>  Yii::t('frontend', 'Registration'), 'url' => ['/site/signup']];
+                $menuItems[] = ['label' => Yii::t('frontend', 'Login'), 'url' => ['/']];
             } else {
-                $menuItems[] = ['label' => 'Профиль', 'url' => ['/users/profile']];
+                $menuItems[] = ['label' => Yii::t('frontend', 'Profile'), 'url' => ['/users/profile']];
                 $menuItems[] = [
-                    'label' => 'Выход (' . Yii::$app->user->identity->username . ')',
+                    'label' => Yii::t('frontend', 'Logout') . ' (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];

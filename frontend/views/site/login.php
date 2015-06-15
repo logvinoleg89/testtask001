@@ -7,13 +7,13 @@ use yii\widgets\Pjax;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
 
-$this->title = 'Авторизация';
+$this->title = Yii::t('frontend', 'Authorization');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Введите данные</p>
+    <p><?= Yii::t('frontend', 'Enter the data')?></p>
 
     <div class="row">
         <div class="col-lg-5">
@@ -23,10 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'password')->passwordInput() ?>
             <?= $form->field($model, 'rememberMe')->checkbox() ?>
             <div style="color:#999;margin:1em 0">
-                Вы еще не с нами? <?php echo Html::a('Зарегистрироваться', ['signup']) ?>
+                <?= Yii::t('frontend', 'You are not with us?') ?> <?php echo Html::a(Yii::t('frontend', 'Sign up'), ['signup']) ?>
             </div>
             <div class="form-group">
-                <?= Html::submitButton('Вход', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                <?= Html::submitButton(Yii::t('frontend', 'Enter'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
             </div>
             <div class="form-group">
                 <?= yii\authclient\widgets\AuthChoice::widget([

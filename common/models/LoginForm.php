@@ -23,7 +23,7 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required', 'message' => 'Необходимо заполнить поле'],
+            [['username', 'password'], 'required', 'message' => Yii::t('common', 'It is necessary to fill the field')],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -37,9 +37,9 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => 'Логин',
-            'password' => 'Пароль',
-            'rememberMe' => 'Запомнить меня'
+            'username' => Yii::t('common', 'Login'),
+            'password' => Yii::t('common', 'Password'),
+            'rememberMe' => Yii::t('common', 'Remember me'),
         ];
     }
 
@@ -55,7 +55,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Неправильное имя пользователя или пароль.');
+                $this->addError($attribute, Yii::t('common', 'Incorrect username or password.'));
             }
         }
     }
@@ -65,7 +65,7 @@ class LoginForm extends Model
         $user = User::findByUsername($this->username);
         
         if (!$user || $user->role != $params['role']) {
-            $this->addError($attribute, 'Такого аккаунта не существует');
+            $this->addError($attribute, Yii::t('common', 'This account does not exist'));
         }
     }
 

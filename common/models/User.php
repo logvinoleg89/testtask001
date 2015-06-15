@@ -93,23 +93,21 @@ class User extends ActiveRecord implements IdentityInterface
 
             [ 'new_password', 'safe'],
 
-            ['new_password', 'string', 'length' => [6, 25], 'tooShort' => 'Пароль должен быть не менее 6 символов' ,
-                'tooLong' => 'Пароль должен быть не более 25 символов'],
-            ['new_password', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => 'Пароль может содержать только буквы латинского алфавита и цифры'],
+            ['new_password', 'string', 'length' => [6, 25], 'tooShort' => Yii::t('common', 'The password must be at least 6 characters'),
+                'tooLong' => Yii::t('common', 'The password should be no more than 25 characters')],
+            ['new_password', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => Yii::t('common', 'The password can contain only letters and numbers')],
 
             ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => 'Имя пользователя может содержать только буквы латинского алфавита и цифры'],
-            ['username', 'required', 'message' => 'Введите имя пользователя'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Пользователь с таким именем уже зарегистрирован'],
-            ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => 'Имя пользователя должно быть не менее 2 символов',
-                'tooLong' => 'Имя пользователя должно быть не более 255 символов'],
+            ['username', 'match', 'pattern' => '/^[0-9a-z]+$/i', 'message' => Yii::t('common', 'The password can contain only letters and numbers')],
+            ['username', 'required', 'message' => Yii::t('common', 'Enter your user name')],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('common', 'This user name is already registered')],
+            ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => Yii::t('common', 'Username must be at least 2 characters'),
+                'tooLong' => Yii::t('common', 'The user name must be no more than 255 characters')],
 
             ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required', 'message' => 'Введите e-mail'],
-            ['email', 'email', 'message' => 'Введите корректный e-mail адрес'],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный адрес электронной почты уже используется'],
-                    
-
+            ['email', 'required', 'message' => Yii::t('common', 'Enter your e-mail')],
+            ['email', 'email', 'message' => Yii::t('common', 'Please enter a valid e-mail address')],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('common', 'This e-mail address is already in use')],
         ];
     }
 
@@ -126,7 +124,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        throw new NotSupportedException(Yii::t('common','"findIdentityByAccessToken" is not implemented.'));
     }
 
     /**
@@ -256,12 +254,11 @@ class User extends ActiveRecord implements IdentityInterface
     public function attributeLabels()
     {
         return [
-            'username' => 'Логин',
-            'new_password' => 'Новый пароль',
-            'email' => 'E-mail',
-            'status' => 'Статус',
-            'role' => 'Роль'
+            'username' => Yii::t('common', 'Login'),
+            'new_password' =>  Yii::t('common', 'New Password'),
+            'email' => 'E-mail',Yii::t('common', 'E-mail'),
+            'status' => Yii::t('common', 'Status'),
+            'role' => Yii::t('common', 'Role'),
         ];
     }
-
 }
